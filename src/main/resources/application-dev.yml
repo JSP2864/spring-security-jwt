@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+
+spring:
+   profile: dev
+
+   datasource:
+     dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
+     url:
+     databaseName: ${DB_NAME}
+     serverName: ${DB_SERVER}
+     username: ${PG_USER}
+     password: ${PG_PASSWORD}
+     max-active: 10
+
+   jpa:
+     database-platform: org.hibernate.dialect.PostgreSQLDialect
+     database: POSTGRESQL
+     openInView: false
+     show-sql: true
+     generate-ddl: false
+     hibernate:
+            ddl-auto: none
+            naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+     properties:
+            hibernate.cache.use_second_level_cache: false
